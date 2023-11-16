@@ -4,8 +4,10 @@
 
 The `globalThis` global property contains the global this value, which is usually akin to the global object.
 
-## What new Packages used
 
+
+## What new Packages used
+1. uploadthing
 
 
 ## What is different in it.
