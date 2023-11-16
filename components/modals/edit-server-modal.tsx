@@ -35,7 +35,7 @@ const formSchema = z.object({
     message: "Server image is required.",
   }),
 });
-export const EditServerModel = () => {
+export const EditServerModal = () => {
   const router = useRouter();
   const { isOpen, onClose, type, data } = useModal();
 

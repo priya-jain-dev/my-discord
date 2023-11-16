@@ -1,7 +1,8 @@
 "use client";
-import { CreateServerModel } from "@/components/modals/create-server-model";
-import { EditServerModel } from "@/components/modals/edit-server-model";
-import { InviteModel } from "@/components/modals/invite-model";
+import { CreateServerModal } from "@/components/modals/create-server-modal";
+import { EditServerModal } from "@/components/modals/edit-server-modal";
+import { InviteModal } from "@/components/modals/invite-modal";
+import { MemberModal } from "@/components/modals/members-modal";
 import { useEffect, useState } from "react";
 
 const ModalProvider = () => {
@@ -15,9 +16,10 @@ const ModalProvider = () => {
   }
   return (
     <>
-      <CreateServerModel />
-      <InviteModel />
-      <EditServerModel />
+      <CreateServerModal />
+      <InviteModal />
+      <EditServerModal />
+      <MemberModal />
     </>
   );
 };

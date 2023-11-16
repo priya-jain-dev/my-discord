@@ -16,7 +16,7 @@ import { useOrigin } from "@/hooks/user-origin";
 import { useState } from "react";
 import axios from "axios";
 
-export const InviteModel = () => {
+export const InviteModal = () => {
   const router = useRouter();
   const { onOpen, isOpen, onClose, type, data } = useModal();
   const origin = useOrigin();
