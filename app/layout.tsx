@@ -1,9 +1,10 @@
+import ModalProvider from "@/components/ui/providers/model-providers";
+import { ThemeProvider } from "@/components/ui/providers/theme-provider";
+import { cn } from "@/lib/utils";
+import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
-import { ThemeProvider } from "@/components/ui/providers/theme-provider";
-import { cn } from "@/lib/utils";
 
 const font = Open_Sans({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
             disableTransitionOnChange
             storageKey="discord-theme"
           >
+            <ModalProvider />
             {children}
           </ThemeProvider>
         </body>
