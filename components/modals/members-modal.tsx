@@ -1,6 +1,6 @@
 "use client";
 
-import { useModal } from "@/hooks/use-model-store";
+import { useModal } from "@/hooks/use-modal-store";
 import { useRouter } from "next/navigation";
 import {
   Dialog,
@@ -38,9 +38,11 @@ import { MemberRole } from "@prisma/client";
 import qs from "query-string";
 import axios from "axios";
 const roleIconMap = {
-  GUEST: null,
-  MODERATOR: <ShieldCheck className="h-4 w-4 ml-2 text-indigo-500" />,
-  ADMIN: <ShieldAlert className="h-4 w-4 ml-2 text-rose-500" />,
+  [MemberRole.GUEST]: null,
+  [MemberRole.MODERATOR]: (
+    <ShieldCheck className="h-4 w-4 ml-2 text-indigo-500" />
+  ),
+  [MemberRole.ADMIN]: <ShieldAlert className="h-4 w-4 ml-2 text-rose-500" />,
 };
 export const MemberModal = () => {
   const router = useRouter();

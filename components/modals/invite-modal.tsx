@@ -1,6 +1,6 @@
 "use client";
 
-import { useModal } from "@/hooks/use-model-store";
+import { useModal } from "@/hooks/use-modal-store";
 import { useRouter } from "next/navigation";
 import {
   Dialog,

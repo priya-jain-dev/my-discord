@@ -18,7 +18,7 @@ import {
   UserPlus,
   Users,
 } from "lucide-react";
-import { useModal } from "@/hooks/use-model-store";
+import { useModal } from "@/hooks/use-modal-store";
 
 interface ServerHeaderProps {
   server: ServerWithMembersWithProfiles;
@@ -68,20 +68,29 @@ const ServerHeader = ({ server, role }: ServerHeaderProps) => {
             </DropdownMenuItem>
           )}
           {isModerator && (
-            <DropdownMenuItem className="cursor-pointer px-3 text-sm py-2">
+            <DropdownMenuItem
+              onClick={() => onOpen("createChannel", { server })}
+              className="cursor-pointer px-3 text-sm py-2"
+            >
               Create Channel
               <PlusCircle className="h-4 w-4 ml-auto" />
             </DropdownMenuItem>
           )}
           {isModerator && <DropdownMenuSeparator />}
           {isAdmin && (
-            <DropdownMenuItem className="cursor-pointer px-3 text-sm py-2 text-rose-500">
+            <DropdownMenuItem
+              onClick={() => onOpen("deleteServer", { server })}
+              className="cursor-pointer px-3 text-sm py-2 text-rose-500"
+            >
               Delete Server
               <Trash className="h-4 w-4 ml-auto" />
             </DropdownMenuItem>
           )}
           {!isAdmin && (
-            <DropdownMenuItem className="cursor-pointer px-3 text-sm py-2 text-rose-500">
+            <DropdownMenuItem
+              onClick={() => onOpen("leaveServer", { server })}
+              className="cursor-pointer px-3 text-sm py-2 text-rose-500"
+            >
               Leave Server
               <LogOut className="h-4 w-4 ml-auto" />
             </DropdownMenuItem>
